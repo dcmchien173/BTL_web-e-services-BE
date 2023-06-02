@@ -1,0 +1,48 @@
+package model;
+
+
+public class Class {
+    private String Class_id;
+    private String Class_name;
+    private int Number_of_student;
+    private String Quiz_id  ;
+    private String Teacher_id  ;
+
+    public Class() {
+    }
+
+    public Class(String Class_id, String Class_name, int Number_of_student ,  String Teacher_id) {
+        this.Class_id = Class_id;
+        this.Class_name = Class_name;
+        this.Number_of_student = Number_of_student;
+        this.Teacher_id = Teacher_id;
+    
+    }
+    public String getClass_id() {
+        return Class_id;
+    }
+    public void setClass_id(String Class_id) {
+        this.Class_id = Class_id;
+    }
+    public String getClass_name() {
+        return Class_name;
+    }
+    public void setClass_name(String Class_name) {
+        this.Class_name = Class_name;
+    }
+    public String getTeacher_id() {
+        return Teacher_id;
+    }
+    public void setTeacher_id(String Teacher_id) {
+        this.Teacher_id = Teacher_id;
+    }
+    public int getNumber_of_student() {
+        return Number_of_student;
+    }
+    public void setNumber_of_student(String Number_of_student) {
+        this.Number_of_student = Number_of_student;
+    }
+    @Override
+    public String toString() {
+        return "Class{" + "Class_id=" + Class_id + ", Class_name=" + Class_name + ", Teacher_id=" + Teacher_id + ", Number_of_student=" + Number_of_student + " '}';
+    }
