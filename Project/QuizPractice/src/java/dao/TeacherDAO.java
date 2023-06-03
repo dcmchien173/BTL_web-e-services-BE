@@ -89,7 +89,7 @@ public class TeacherDAO extends DBContext {
             pd.setString(1, id);
             ResultSet rs = pd.executeQuery();
             while (rs.next()) {
-                 t = new Teacher(rs.getInt("Teacher_id"),
+                 t = new Teacher(rs.getString("Teacher_id"),
                         rs.getString("Teacher_name"),
                         rs.getString("Teacher_password"),
                         rs.getString("Teacher_email"),
@@ -113,7 +113,7 @@ public class TeacherDAO extends DBContext {
             pd.setString(1, email);
             ResultSet rs = pd.executeQuery();
             while (rs.next()) {
-                 t = new Teacher(rs.getInt("Teacher_id"),
+                 t = new Teacher(rs.getString("Teacher_id"),
                         rs.getString("Teacher_name"),
                         rs.getString("Teacher_password"),
                         rs.getString("Teacher_email"),
@@ -161,8 +161,8 @@ public class TeacherDAO extends DBContext {
     }
 
     public void addQuizToclass(String Class_id, String Quiz_id){
-        String query = "insert into [Class](Quiz_id) where Class_id = ?"
-        + "Values(?)";
+        String query = "insert into [Class_Quiz](Class_id,Quiz_id)"
+        + "Values(?,?)";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, Class_id);
